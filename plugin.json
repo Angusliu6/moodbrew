@@ -1,0 +1,37 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "moodbrew",
+  "version": "0.1.0",
+  "description": "Mood-first coffee discovery: interpret coffee photos and menus, explain origins, personalize recommendations, and maintain a portable tasting journal.",
+  "author": {
+    "name": "MoodBrew Community"
+  },
+  "license": "MIT",
+  "keywords": [
+    "coffee",
+    "mood",
+    "tasting",
+    "origin",
+    "recommendations",
+    "journal"
+  ],
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "MoodBrew · 心情咖啡图谱",
+        "shortDescription": "今天的心情，适合哪一杯？",
+        "longDescription": "拍咖啡豆包装或菜单，理解产区与风味；聊天表达今天的情绪和想要的状态，获得可解释的咖啡推荐；逐杯积累可导出的味觉人格与品鉴日志。",
+        "developerName": "MoodBrew Community",
+        "category": "Lifestyle",
+        "capabilities": [
+          "Interactive"
+        ],
+        "defaultPrompt": [
+          "帮我根据今天的心情挑一杯咖啡，先问我一个最有用的问题。",
+          "我拍了一张咖啡菜单或咖啡豆包装，帮我识别并比较。",
+          "帮我记录刚喝的咖啡，慢慢建立我的味觉人格。"
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,8 @@
+# Private tasting journals / backups / photo notes
+my-coffee.json
+my-backup.json
+*private-journal*.json
+__pycache__/
+*.pyc
+.DS_Store
+.env

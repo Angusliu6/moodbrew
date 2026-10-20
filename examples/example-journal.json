@@ -1,0 +1,42 @@
+{
+  "schema_version": "1.0.0",
+  "profile": {
+    "display_name": null,
+    "preferences": {},
+    "updated_at": null
+  },
+  "entries": [
+    {
+      "entry_id": "demo-001",
+      "date": "2026-01-10",
+      "status": "tasted",
+      "coffee": {
+        "name": "Demo Ethiopia Guji washed",
+        "origin_country": "Ethiopia",
+        "region": "Guji",
+        "process": "washed"
+      },
+      "brew": {
+        "method": "pour-over"
+      },
+      "mood": {
+        "before": "curious",
+        "desired": "bright",
+        "after": "refreshed"
+      },
+      "ratings": {
+        "sweetness": 3,
+        "acidity": 4,
+        "bitterness": 1,
+        "body": 2,
+        "finish": 3,
+        "after_sweetness": 3,
+        "aroma": 4,
+        "overall": 4
+      },
+      "finish_character": "clean and citrus-like",
+      "notes": "Fictional sample entry; no personal data.",
+      "evidence": "self_report"
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "MoodBrew portable tasting journal",
+  "type": "object",
+  "required": ["schema_version", "entries"],
+  "properties": {
+    "schema_version": {"const": "1.0.0"},
+    "profile": {"type": "object", "properties": {"display_name": {"type": ["string", "null"]}, "updated_at": {"type": ["string", "null"]}, "preferences": {"type": "object"}}, "additionalProperties": true},
+    "entries": {"type": "array", "items": {"$ref": "#/$defs/entry"}}
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "scale": {"type": ["integer", "null"], "minimum": 1, "maximum": 5},
+    "entry": {
+      "type": "object", "required": ["entry_id", "date", "status", "coffee"],
+      "properties": {
+        "entry_id": {"type": "string", "minLength": 1},
+        "date": {"type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}$"},
+        "time_local": {"type": ["string", "null"]},
+        "status": {"enum": ["planned", "ordered", "tasted"]},
+        "coffee": {"type": "object", "required": ["name"], "properties": {"name": {"type": "string", "minLength": 1}, "roaster": {"type": ["string", "null"]}, "origin_country": {"type": ["string", "null"]}, "region": {"type": ["string", "null"]}, "farm": {"type": ["string", "null"]}, "variety": {"type": ["string", "null"]}, "process": {"type": ["string", "null"]}, "roast": {"type": ["string", "null"]}}, "additionalProperties": true},
+        "brew": {"type": "object", "properties": {"method": {"type": ["string", "null"]}, "milk": {"type": ["string", "null"]}, "sweetener": {"type": ["string", "null"]}, "size": {"type": ["string", "null"]}}, "additionalProperties": true},
+        "mood": {"type": "object", "properties": {"before": {"type": ["string", "null"]}, "desired": {"type": ["string", "null"]}, "after": {"type": ["string", "null"]}}, "additionalProperties": true},
+        "ratings": {"type": "object", "properties": {"sweetness": {"$ref": "#/$defs/scale"}, "acidity": {"$ref": "#/$defs/scale"}, "bitterness": {"$ref": "#/$defs/scale"}, "body": {"$ref": "#/$defs/scale"}, "finish": {"$ref": "#/$defs/scale"}, "after_sweetness": {"$ref": "#/$defs/scale"}, "aroma": {"$ref": "#/$defs/scale"}, "overall": {"$ref": "#/$defs/scale"}}, "additionalProperties": false},
+        "finish_character": {"type": ["string", "null"]}, "notes": {"type": ["string", "null"]},
+        "venue": {"type": ["string", "null"]}, "evidence": {"enum": ["self_report", "menu", "photo", "verified_source", "mixed", "unknown"]}
+      }, "additionalProperties": false
+    }
+  }
+}
